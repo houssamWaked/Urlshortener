@@ -30,12 +30,6 @@ class UserRepository {
         throw new Error(`User with name ${userData.user_name} already exists`);
       }
 
-      // Validate the user input fields
-      if (!userData.user_name) throw new Error('User name is required');
-      if (!userData.user_email || !userData.user_password) {
-        throw new Error('Email and password are required');
-      }
-
       // Create a new user record in the database
       const user = await User.create({
         user_name: userData.user_name,
