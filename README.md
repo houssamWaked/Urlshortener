@@ -131,4 +131,4 @@ Created by [Houssam Waked](https://github.com/houssamWaked).
 - **Bugs and Issues**: Provides a link for users to report bugs or issues.
 - **Author**: Information about the author with a link to the GitHub profile.
 
-This structure provides all the necessary information for someone to understand, install, and use the URL shortener project. Let me know if you want to add or modify anything!
+This structure provides all the necessary information for someone to understand.
