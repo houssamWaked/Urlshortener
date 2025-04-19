@@ -1,6 +1,7 @@
 const UserServices = require('../services/userServices');
 
 class UserController {
+  // Error handling function
   static handleError(res, error) {
     const statusCode = error.statusCode || 500;
     res
@@ -8,6 +9,7 @@ class UserController {
       .json({ message: error.message || 'An error occurred' });
   }
 
+  // Create a new user
   static async createUser(req, res) {
     try {
       const userData = req.body;
@@ -18,6 +20,7 @@ class UserController {
     }
   }
 
+  // Get all users
   static async getAllUsers(req, res) {
     try {
       const users = await UserServices.getAllUsers();
@@ -27,6 +30,7 @@ class UserController {
     }
   }
 
+  // Get a user by email
   static async getUserByEmail(req, res) {
     try {
       const { user_email } = req.params;
@@ -37,6 +41,7 @@ class UserController {
     }
   }
 
+  // Get a user by ID
   static async getUserById(req, res) {
     try {
       const { user_id } = req.params;
@@ -47,6 +52,7 @@ class UserController {
     }
   }
 
+  // Update user details
   static async updateUser(req, res) {
     try {
       const { user_id } = req.params;
@@ -58,6 +64,7 @@ class UserController {
     }
   }
 
+  // Delete a user
   static async deleteUser(req, res) {
     try {
       const { user_id } = req.params;
@@ -68,6 +75,7 @@ class UserController {
     }
   }
 
+  // Get a user by name
   static async getUserByName(req, res) {
     try {
       const { user_name } = req.params;

@@ -1,5 +1,6 @@
 const { body, param, validationResult } = require('express-validator');
 
+// Validation for creating a new user
 const ValidateUserCreation = [
   body('user_name')
     .notEmpty()
@@ -28,6 +29,7 @@ const ValidateUserCreation = [
   },
 ];
 
+// Validation for user ID parameter
 const ValidateUserIdParam = [
   param('user_id')
     .isInt({ gt: 0 })
@@ -42,6 +44,7 @@ const ValidateUserIdParam = [
   },
 ];
 
+// Validation for user email parameter
 const ValidateUserEmailParam = [
   param('user_email').isEmail().withMessage('Invalid email format'),
 
@@ -54,6 +57,7 @@ const ValidateUserEmailParam = [
   },
 ];
 
+// Validation for user name parameter
 const ValidateUserNameParam = [
   param('user_name').notEmpty().withMessage('User name is required'),
 
@@ -66,6 +70,7 @@ const ValidateUserNameParam = [
   },
 ];
 
+// Validation for updating user data
 const ValidateUserUpdate = [
   param('user_id')
     .isInt({ gt: 0 })
@@ -92,6 +97,7 @@ const ValidateUserUpdate = [
   },
 ];
 
+// Validation for deleting a user
 const ValidateDeleteUser = ValidateUserIdParam;
 
 module.exports = {
