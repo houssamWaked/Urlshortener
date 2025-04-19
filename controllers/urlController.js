@@ -44,6 +44,19 @@ class UrlController {
       this.handleError(res, error);
     }
   }
+  static async ExpiredUrl(req, res) {
+    try {
+      const expiredCount = await UrlServices.ExpiredUrl();
+      res
+        .status(200)
+        .json({ message: `${expiredCount} expired URLs marked as inactive.` });
+    } catch (error) {
+      if (error.status === 404) {
+        return res.status(404).json({ message: error.message });
+      }
+      this.handleError(res, error);
+    }
+  }
 }
 
 module.exports = UrlController;

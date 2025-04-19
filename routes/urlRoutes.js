@@ -15,6 +15,7 @@ router.post('/random', ValidateRandomUrlCreation, (req, res) =>
 ); // Create a random URL
 router.get('/:short_code', ValidateshortCodeParam, (req, res) =>
   UrlController.redirectToOriginalUrl(req, res)
-); // Get all URLs
+);
+router.put('/', (req, res) => UrlController.ExpiredUrl(req, res));
 
 module.exports = router;

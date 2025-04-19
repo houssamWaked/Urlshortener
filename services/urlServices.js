@@ -24,5 +24,8 @@ class UrlServices {
   static async redirectToOriginalUrl(short_code) {
     return UrlRepository.redirectToOriginalUrl(short_code);
   }
+  static async ExpiredUrl() {
+    return UrlRepository.ExpiredUrl();
+  }
 }
 module.exports = UrlServices;
