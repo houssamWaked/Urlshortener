@@ -5,8 +5,9 @@ const UserRepository=require('../repositories/userRepositories')
 class UrlServices{
 
 static async createUrl(urlData) {
+    console.log(urlData);
     if(urlData.user_id){
-        const user=await UserRepository.getUserById(urlData.user_id);
+        const user=await UserRepository.userExistsByID(urlData.user_id);
         if(!user){
             throw new Error('User not found');
         }

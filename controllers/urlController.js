@@ -37,8 +37,9 @@ class UrlController {
                     // Redirect to the original URL
                     static async redirectToOriginalUrl(req, res) {
                         try {
+                            const prefix = 'HMM/';
                             const { short_code } = req.params;
-                            const originalUrl = await UrlServices.redirectToOriginalUrl(short_code);
+                            const originalUrl = await UrlServices.redirectToOriginalUrl(prefix + short_code);
                             res.redirect(originalUrl);
                         } catch (error) {
                             this.handleError(res, error);

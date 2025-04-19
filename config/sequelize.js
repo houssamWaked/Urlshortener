@@ -11,8 +11,11 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     min: 0,
     acquire: 30000,
     idle: 10000
+  },
+  dialectOptions: {
+    allowPublicKeyRetrieval: true,
+    ssl: false // If you're not using SSL
   }
 });
-
 
 module.exports = sequelize;

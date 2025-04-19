@@ -28,11 +28,11 @@ class urlRepository {
             if (existingUrl) {
                 throw new Error('Short code already in use. Please choose another.');
             }
-    
+            const prefix = 'HMM/';
           
             const newUrl = await urls.create({
                 long_url: urlData.long_url,
-                short_code: urlData.short_code,
+                short_code: `${prefix}${urlData.short_code}`,
                 user_id: urlData.user_id || null,
               
 
@@ -90,7 +90,7 @@ class urlRepository {
 static async generateUniqueShortCode(totalLength = 10, maxAttempts = 5) {
     let attempts = 0;
     let short_code;
-    const prefix = 'HMM';
+    const prefix = 'HMM/';
     const randomPartLength = totalLength - prefix.length;
 
     do {
