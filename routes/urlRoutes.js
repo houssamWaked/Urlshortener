@@ -5,7 +5,7 @@ const {
   ValidateUrlCreation,
   ValidateRandomUrlCreation,
   ValidateshortCodeParam,
-} = require('../validators/urlsDTO.JS'); // Assuming you have a DTO for URL validation
+} = require('../validators/urlsDTO.JS');
 
 router.post('/', ValidateUrlCreation, (req, res) =>
   UrlController.createUrl(req, res)
