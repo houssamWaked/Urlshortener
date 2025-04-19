@@ -17,14 +17,14 @@ A simple URL shortener service that allows users to create short URLs and redire
 
 The following dependencies are required to run this project:
 
-- **bcrypt**: Library for password hashing.
-- **cors**: Middleware for enabling Cross-Origin Resource Sharing.
-- **dotenv**: Loads environment variables from a `.env` file.
-- **express**: Web framework for Node.js.
-- **express-validator**: Middleware for validation of incoming request data.
-- **mariadb**: MariaDB client for Node.js.
-- **mysql2**: MySQL client for Node.js.
-- **sequelize**: Promise-based ORM for Node.js, supports various databases like MySQL, MariaDB.
+- bcrypt: Library for password hashing.
+- cors: Middleware for enabling Cross-Origin Resource Sharing.
+- dotenv: Loads environment variables from a `.env` file.
+- express: Web framework for Node.js.
+- express-validator: Middleware for validation of incoming request data.
+- mariadb: MariaDB client for Node.js.
+- mysql2: MySQL client for Node.js.
+- sequelize: Promise-based ORM for Node.js, supports various databases like MySQL, MariaDB.
 
 ## Installation
 
@@ -73,7 +73,7 @@ The following dependencies are required to run this project:
 
 ### Create a URL
 
-- **POST** `/api/urls`  
+- POST `/api/urls`  
   Creates a new URL entry with a custom short code.
 
   - Body:
@@ -86,7 +86,7 @@ The following dependencies are required to run this project:
 
 ### Create a Random URL
 
-- **POST** `/api/urls/random`  
+- POST `/api/urls/random`  
   Creates a new URL entry with a randomly generated short code.
 
   - Body:
@@ -98,17 +98,17 @@ The following dependencies are required to run this project:
 
 ### Redirect to Original URL
 
-- **GET** `/api/urls/:short_code`  
+- GET `/api/urls/:short_code`  
   Redirects to the original URL associated with the given short code.
 
 ### Get URL Count by Short Code
 
-- **GET** `/api/urls/:short_code/count`  
+- GET `/api/urls/:short_code/count`  
   Retrieves the number of times the short URL has been accessed.
 
 ### Expire Inactive URLs
 
-- **PUT** `/api/urls`  
+- PUT `/api/urls`  
   Marks expired URLs as inactive.
 
 ## License
@@ -122,13 +122,12 @@ Created by [Houssam Waked](https://github.com/houssamWaked).
 
 ### Explanation of Sections:
 
-- **Features**: A brief description of the core functionalities of your project.
-- **Dependencies**: Lists all dependencies required to run the project.
-- **Installation**: Step-by-step instructions for setting up the project locally.
-- **Running the Application**: Explains how to start the development or production server.
-- **API Endpoints**: Lists and describes the available API routes with expected request/response formats.
-- **License**: Includes licensing information (ISC license in your case).
-- **Bugs and Issues**: Provides a link for users to report bugs or issues.
-- **Author**: Information about the author with a link to the GitHub profile.
+- Features: A brief description of the core functionalities of your project.
+- **Dependencies: Lists all dependencies required to run the project.
+- **Installation: Step-by-step instructions for setting up the project locally.
+- Running the Application: Explains how to start the development or production server.
+- API Endpoints: Lists and describes the available API routes with expected request/response formats.
+- License: Includes licensing information (ISC license in your case).
+- Author: Information about the author with a link to the GitHub profile.
 
 This structure provides all the necessary information for someone to understand.
