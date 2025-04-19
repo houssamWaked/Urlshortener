@@ -82,14 +82,11 @@ class UserRepository {
 
   static async updateUser(user_id, userData) {
     try {
-      // Ensure that the user exists
-      const user = await User.findByPk(user_id);
+      const user = await UserRepository.userExistsByID(user_id);
       if (!user) throw new Error(`User with ID ${user_id} not found`);
 
-      // Dynamically check which fields were provided in userData
       const updateFields = {};
 
-      // Only update user_email if it's provided and valid
       if (userData.user_email) {
         const emailExists = await this.userExistsByEmail(
           userData.user_email,
@@ -103,33 +100,25 @@ class UserRepository {
         updateFields.user_email = userData.user_email;
       }
 
-      // Only update user_name if it's provided
       if (userData.user_name) {
         updateFields.user_name = userData.user_name;
       }
 
-      // Only update user_password if it's provided
       if (userData.user_password) {
         updateFields.user_password = userData.user_password;
       }
 
-      // Add more fields if required, dynamically as you wish
-      // Example: updateFields.created_at = userData.created_at;
-
-      // If no fields are provided for update, throw an error
       if (Object.keys(updateFields).length === 0) {
         throw new Error('No fields provided for update');
       }
 
-      // Dynamically update the user model with the fields in updateFields
       await user.update(updateFields);
 
       return {
-        affectedRows: 1, // Indicates one row was affected (only one user should be updated)
+        affectedRows: 1,
         message: `User with ID ${user_id} updated successfully`,
       };
     } catch (e) {
-      // Handle errors
       this.handleError(e, 'updateUser');
     }
   }

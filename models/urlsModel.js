@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/sequelize'); // your sequelize instance file
+const sequelize = require('../config/sequelize');
 
 const Url = sequelize.define(
   'Url',

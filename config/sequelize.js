@@ -1,7 +1,6 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-// Create a Sequelize instance (similar to pool)
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -9,7 +8,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: 'mariadb',
-    logging: false, // Optional: disable SQL query logging
+    logging: false,
     pool: {
       max: 10,
       min: 0,
@@ -18,7 +17,7 @@ const sequelize = new Sequelize(
     },
     dialectOptions: {
       allowPublicKeyRetrieval: true,
-      ssl: false, // If you're not using SSL
+      ssl: false,
     },
   }
 );

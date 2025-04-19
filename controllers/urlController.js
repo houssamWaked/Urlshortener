@@ -1,7 +1,6 @@
-const UrlServices = require('../services/urlServices'); // Assuming you put the logic in the `urlRepository` class
+const UrlServices = require('../services/urlServices');
 
 class UrlController {
-  // Error handling
   static handleError(res, error) {
     if (process.env.NODE_ENV === 'development') {
       console.error(error);
@@ -9,7 +8,6 @@ class UrlController {
     res.status(500).json({ message: error.message || 'Internal Server Error' });
   }
 
-  // Create a new shortened URL
   static async createUrl(req, res) {
     try {
       const urlData = req.body;
@@ -20,7 +18,6 @@ class UrlController {
     }
   }
 
-  // Create a new shortened URL with a random short code
   static async createRandomUrl(req, res) {
     try {
       const urlData = req.body;
@@ -30,8 +27,23 @@ class UrlController {
       this.handleError(res, error);
     }
   }
+  static async getUrlCountbyShortCode(req, res) {
+    try {
+      const prefix = 'HMM/';
+      const { short_code } = req.params;
+      console.log(short_code);
+      const urlCount = await UrlServices.getUrlCountbyShortCode(
+        prefix + short_code
+      );
 
-  // Redirect to the original URL
+      res.status(200).json(urlCount);
+    } catch (error) {
+      if (error.status === 404) {
+        return res.status(404).json({ message: error.message });
+      }
+      this.handleError(res, error);
+    }
+  }
   static async redirectToOriginalUrl(req, res) {
     try {
       const prefix = 'HMM/';

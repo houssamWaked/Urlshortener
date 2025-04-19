@@ -1,7 +1,6 @@
 const UserServices = require('../services/userServices');
 
 class UserController {
-  // Static utility function for consistent error response
   static handleError(res, error) {
     const statusCode = error.statusCode || 500;
     res

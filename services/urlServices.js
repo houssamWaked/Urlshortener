@@ -21,6 +21,10 @@ class UrlServices {
     }
     return UrlRepository.createRandomUrl(urlData);
   }
+  static async getUrlCountbyShortCode(short_code) {
+    return UrlRepository.getUrlCountbyShortCode(short_code);
+  }
+
   static async redirectToOriginalUrl(short_code) {
     return UrlRepository.redirectToOriginalUrl(short_code);
   }

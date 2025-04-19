@@ -9,10 +9,13 @@ const {
 
 router.post('/', ValidateUrlCreation, (req, res) =>
   UrlController.createUrl(req, res)
-); // Create a URL
+);
 router.post('/random', ValidateRandomUrlCreation, (req, res) =>
   UrlController.createRandomUrl(req, res)
-); // Create a random URL
+);
+router.get('/:short_code/count', ValidateshortCodeParam, (req, res) =>
+  UrlController.getUrlCountbyShortCode(req, res)
+);
 router.get('/:short_code', ValidateshortCodeParam, (req, res) =>
   UrlController.redirectToOriginalUrl(req, res)
 );

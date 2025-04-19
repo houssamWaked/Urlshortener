@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/sequelize'); // your sequelize instance file
-
+const sequelize = require('../config/sequelize');
 const User = sequelize.define(
   'User',
   {
@@ -28,8 +27,8 @@ const User = sequelize.define(
     },
   },
   {
-    tableName: 'users', // match your existing table name
-    timestamps: false, // disable automatic createdAt/updatedAt if you're not using them
+    tableName: 'users',
+    timestamps: false,
   }
 );
 
