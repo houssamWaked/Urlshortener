@@ -78,7 +78,6 @@ class urlRepository {
 
   // Method to get the click count of a URL by its short code
   static async getUrlCountbyShortCode(short_code) {
-    console.log(short_code); // Log the short code for debugging purposes
     try {
       // Find the URL record by short code
       const urlRecord = await urls.findOne({
