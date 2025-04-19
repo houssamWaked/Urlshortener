@@ -123,8 +123,8 @@ Created by [Houssam Waked](https://github.com/houssamWaked).
 ### Explanation of Sections:
 
 - Features: A brief description of the core functionalities of your project.
-- **Dependencies: Lists all dependencies required to run the project.
-- **Installation: Step-by-step instructions for setting up the project locally.
+- Dependencies: Lists all dependencies required to run the project.
+- Installation: Step-by-step instructions for setting up the project locally.
 - Running the Application: Explains how to start the development or production server.
 - API Endpoints: Lists and describes the available API routes with expected request/response formats.
 - License: Includes licensing information (ISC license in your case).
