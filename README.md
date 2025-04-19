@@ -1,4 +1,3 @@
-Here's a suggested `README.md` file for your project:
 
 ```markdown
 # URL Shortener
@@ -115,10 +114,6 @@ The following dependencies are required to run this project:
 ## License
 
 This project is licensed under the ISC License.
-
-## Bugs and Issues
-
-If you encounter any issues, please report them [here](https://github.com/houssamWaked/Urlshortener/issues).
 
 ## Author
 
